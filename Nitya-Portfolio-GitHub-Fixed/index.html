@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nitya Wanage · Content Strategist &amp; Brand Storyteller</title>
+<meta name="description" content="Portfolio of Nitya Wanage. Content Strategist, Copywriter, and Brand Storyteller specializing in finance, tech, healthcare, fashion, and social impact.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --transparent-yellow:#F5EFC6;
+    --sceptre-red:#4D0E12;
+    --cerulean-blue:#A5BCD6;
+    --potting-soil:#4A2E27;
+    --java-brown:#231815;
+    --paper:#FAF7EF;
+    --card-bg:#FFFFFF;
+    --line:#E6DFC7;
+    --ink:var(--java-brown);
+    --ink-soft:#5A4A46;
+    --max:1160px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    margin:0;
+    color:var(--ink);
+  }
+  p{line-height:1.65;color:var(--ink-soft);margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--sceptre-red);
+    display:inline-block;
+    margin-bottom:0.9rem;
+    background:var(--transparent-yellow);
+    padding:6px 14px;
+    border-radius:20px;
+    border:1px solid #E6D8A6;
+  }
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;position:relative;}
+  .mark{
+    background-image:linear-gradient(var(--cerulean-blue),var(--cerulean-blue));
+    background-repeat:no-repeat;
+    background-size:100% 0.42em;
+    background-position:0 90%;
+    padding:0 0.05em;
+  }
+
+  /* EDIT MODE STYLING */
+  [contenteditable="true"]{
+    outline:2px dashed var(--sceptre-red) !important;
+    outline-offset:4px;
+    border-radius:4px;
+    background:rgba(77,14,18,0.06) !important;
+    transition:background .2s ease;
+  }
+  [contenteditable="true"]:focus{
+    background:rgba(245,239,198,0.3) !important;
+    outline:2px solid var(--sceptre-red) !important;
+  }
+  .edit-bar{
+    position:fixed;bottom:20px;right:20px;z-index:9999;
+    background:var(--java-brown);color:#fff;padding:12px 20px;border-radius:30px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.3);display:flex;align-items:center;gap:12px;
+    font-family:'JetBrains Mono',monospace;font-size:0.8rem;
+  }
+  .edit-bar button{
+    background:var(--sceptre-red);color:#fff;border:none;padding:8px 16px;border-radius:20px;
+    font-weight:700;cursor:pointer;transition:background .2s;
+  }
+  .edit-bar button:hover{background:#6B161B;}
+  .edit-bar button.secondary{background:var(--potting-soil);color:#fff;}
+  .edit-bar button.secondary:hover{background:#5E3D35;}
+
+  /* NAV */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,247,239,0.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--max);margin:0 auto;padding:18px 32px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .nav-name{font-family:'Fraunces',serif;font-weight:700;font-size:1.3rem;}
+  .nav-name span{color:var(--sceptre-red);}
+  .nav-links{display:flex;gap:20px;list-style:none;padding:0;margin:0;align-items:center;}
+  .nav-links a{
+    font-size:0.85rem;text-decoration:none;color:var(--ink-soft);
+    font-weight:600;transition:color .2s;
+  }
+  .nav-links a:hover{color:var(--sceptre-red);}
+  .nav-links .nav-cta{
+    background:var(--sceptre-red);color:#fff;padding:9px 20px;border-radius:20px;font-size:0.8rem;
+    transition:background .2s;
+  }
+  .nav-links .nav-cta:hover{background:#6B161B;}
+  .edit-toggle-btn{
+    background:var(--transparent-yellow);color:var(--potting-soil);border:1px solid #D6CC9C;
+    padding:7px 14px;border-radius:18px;font-family:'JetBrains Mono',monospace;
+    font-size:0.75rem;font-weight:700;cursor:pointer;transition:all .2s;
+  }
+  .edit-toggle-btn:hover,.edit-toggle-btn.active{
+    background:var(--sceptre-red);color:#fff;border-color:var(--sceptre-red);
+  }
+  .nav-toggle{display:none;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--ink);}
+
+  /* HERO */
+  header.hero{
+    padding:92px 0 100px;
+    background:linear-gradient(135deg, var(--transparent-yellow) 0%, var(--paper) 100%);
+    border-bottom:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .blob{position:absolute;border-radius:50%;filter:blur(3px);opacity:0.45;z-index:0;}
+  .hero-inner{display:grid;grid-template-columns:1.3fr 0.9fr;gap:56px;align-items:center;position:relative;z-index:1;}
+  .hero h1{font-size:clamp(2.5rem,5vw,3.75rem);line-height:1.06;letter-spacing:-0.01em;color:var(--java-brown);}
+  .hero p.lede{margin-top:20px;max-width:46ch;font-size:1.08rem;color:var(--potting-soil);}
+  .hero-cta{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 26px;border-radius:30px;
+    font-family:'Inter',sans-serif;font-weight:700;font-size:0.88rem;
+    text-decoration:none;border:2px solid var(--sceptre-red);
+    transition:transform .18s ease, background .18s ease, color .18s ease;
+    cursor:pointer;
+  }
+  .btn:hover{transform:translateY(-3px);}
+  .btn-solid{background:var(--sceptre-red);color:#fff;border-color:var(--sceptre-red);}
+  .btn-solid:hover{background:#6B161B;border-color:#6B161B;}
+  .btn-outline{background:transparent;color:var(--java-brown);border-color:var(--java-brown);}
+  .btn-outline:hover{background:var(--java-brown);color:#fff;}
+
+  .byline-card{
+    background:var(--card-bg);border:1px solid var(--line);
+    padding:28px;position:relative;border-radius:20px;
+    box-shadow:0 18px 40px -20px rgba(35,24,21,0.18);
+    transform:rotate(1.5deg);
+  }
+  .byline-card::before{
+    position:absolute;top:-16px;right:24px;
+    background:var(--cerulean-blue);color:var(--java-brown);
+    font-family:'JetBrains Mono',monospace;font-size:0.68rem;font-weight:700;
+    padding:6px 14px;border-radius:20px;letter-spacing:0.05em;
+    content:"★ AVAILABLE FOR PROJECTS";
+    transform:rotate(-3deg);
+  }
+  .byline-card .stat{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px dashed var(--line);gap:12px;}
+  .byline-card .stat:last-child{border-bottom:none;}
+  .byline-card .stat span:first-child{font-size:0.82rem;color:var(--potting-soil);}
+  .byline-card .stat span:last-child{font-family:'Fraunces',serif;font-weight:700;font-size:0.98rem;color:var(--sceptre-red);text-align:right;}
+
+  section{padding:96px 0;}
+  section.alt{background:var(--transparent-yellow);}
+  .section-head{max-width:720px;margin-bottom:44px;}
+  .section-head h2{font-size:clamp(1.9rem,3.5vw,2.5rem);}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:2fr 1fr;gap:56px;}
+  .about-grid p{font-size:1.05rem;margin-bottom:18px;}
+  .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
+  .pill{
+    font-family:'JetBrains Mono',monospace;font-size:0.75rem;
+    padding:8px 15px;border:none;border-radius:20px;color:var(--java-brown);
+    font-weight:600;
+  }
+  .pill:nth-child(5n+1){background:var(--transparent-yellow);border:1px solid #E6D8A6;}
+  .pill:nth-child(5n+2){background:var(--cerulean-blue);color:var(--java-brown);}
+  .pill:nth-child(5n+3){background:#EDE2D4;color:var(--sceptre-red);}
+  .pill:nth-child(5n+4){background:#E6DFD5;color:var(--potting-soil);}
+  .pill:nth-child(5n+5){background:var(--transparent-yellow);border:1px solid #E6D8A6;}
+  .about-side{border-left:3px solid var(--sceptre-red);padding-left:24px;}
+  .about-side h3{font-size:1rem;margin-bottom:10px;color:var(--sceptre-red);}
+  .about-side p{font-size:0.92rem;}
+
+  /* EXPERIENCE */
+  .timeline{position:relative;}
+  .exp-item{
+    display:grid;grid-template-columns:180px 1fr;gap:32px;
+    padding:32px 0;border-top:1px solid var(--line);
+  }
+  .exp-item:last-child{border-bottom:1px solid var(--line);}
+  .exp-date{font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--potting-soil);padding-top:4px;}
+  .exp-role h3{font-size:1.3rem;}
+  .exp-role .company{font-size:0.9rem;color:var(--sceptre-red);font-weight:700;margin-top:4px;display:block;}
+  .exp-role p{margin-top:14px;font-size:0.95rem;line-height:1.65;color:var(--ink-soft);}
+
+  /* EDUCATION */
+  .edu-card{
+    display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:flex-start;
+    background:var(--card-bg);border:1px solid var(--line);padding:32px;border-radius:20px;
+  }
+  .edu-icon{
+    width:56px;height:56px;border-radius:50%;background:var(--sceptre-red);
+    display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;
+    font-weight:700;color:#fff;font-size:1.2rem;flex-shrink:0;
+  }
+  .edu-card h3{font-size:1.2rem;}
+  .edu-card .edu-sub{font-size:0.88rem;color:var(--sceptre-red);font-weight:600;margin-top:4px;display:block;}
+  .edu-card p{margin-top:14px;font-size:0.95rem;}
+
+  /* WORK CATEGORIES */
+  .category-nav{
+    position:sticky;top:69px;z-index:45;background:rgba(250,247,239,0.96);
+    backdrop-filter:blur(10px);padding:14px 0;border-bottom:1px solid var(--line);
+    margin-bottom:48px;
+  }
+  .category-pills{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;}
+  .category-pills::-webkit-scrollbar{display:none;}
+  .cat-pill{
+    font-family:'JetBrains Mono',monospace;font-size:0.78rem;
+    padding:9px 18px;border:1px solid var(--line);border-radius:24px;
+    background:var(--card-bg);color:var(--potting-soil);font-weight:600;cursor:pointer;
+    white-space:nowrap;transition:all .2s ease;
+  }
+  .cat-pill:hover,.cat-pill.active{background:var(--sceptre-red);color:#fff;border-color:var(--sceptre-red);}
+
+  .category-block{margin-bottom:72px;scroll-margin-top:140px;}
+  .category-header{
+    display:flex;align-items:center;gap:16px;margin-bottom:28px;
+    padding-bottom:14px;border-bottom:2px solid var(--sceptre-red);
+  }
+  .category-header h3{font-size:1.6rem;font-family:'Fraunces',serif;color:var(--sceptre-red);}
+  .category-header .cat-count{
+    font-family:'JetBrains Mono',monospace;font-size:0.75rem;
+    background:var(--transparent-yellow);color:var(--potting-soil);padding:4px 12px;border-radius:14px;
+    font-weight:600;border:1px solid #E6D8A6;
+  }
+
+  .sub-division{
+    margin-bottom:40px;background:var(--card-bg);border:1px solid var(--line);
+    border-radius:24px;padding:32px;box-shadow:0 6px 20px -10px rgba(35,24,21,0.08);
+  }
+  .sub-head{
+    display:flex;justify-content:space-between;align-items:baseline;
+    margin-bottom:20px;border-bottom:1px dashed var(--line);padding-bottom:12px;
+  }
+  .sub-head h4{font-size:1.25rem;color:var(--java-brown);}
+  .sub-head .sub-client{
+    font-family:'JetBrains Mono',monospace;font-size:0.75rem;
+    color:var(--sceptre-red);font-weight:600;text-transform:uppercase;
+  }
+  .work-grid-2{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:center;}
+  .sub-desc{font-size:0.96rem;line-height:1.65;color:var(--potting-soil);}
+  .sub-desc + .sub-desc{margin-top:12px;}
+  .my-role{
+    margin-top:16px;font-family:'JetBrains Mono',monospace;font-size:0.78rem;
+    color:var(--sceptre-red);font-weight:600;
+  }
+
+  .media-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
+  .view-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 18px;border-radius:20px;
+    font-family:'JetBrains Mono',monospace;font-size:0.78rem;font-weight:700;
+    background:var(--transparent-yellow);color:var(--potting-soil);border:1px solid #E6D8A6;
+    cursor:pointer;transition:all .2s ease;
+  }
+  .view-btn:hover{background:var(--potting-soil);color:#fff;}
+  .view-btn.primary{background:var(--sceptre-red);color:#fff;border-color:var(--sceptre-red);}
+  .view-btn.primary:hover{background:#6B161B;border-color:#6B161B;}
+
+  .inline-media-preview{
+    aspect-ratio:16/10;border-radius:16px;overflow:hidden;
+    background:var(--potting-soil);position:relative;border:1px solid var(--line);
+    box-shadow:0 10px 25px -10px rgba(35,24,21,0.2);
+  }
+  .inline-media-preview img{width:100%;height:100%;object-fit:cover;}
+  .media-overlay-play{
+    position:absolute;inset:0;background:rgba(35,24,21,0.45);
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-size:2.2rem;cursor:pointer;transition:background .2s;
+  }
+  .inline-media-preview:hover .media-overlay-play{background:rgba(35,24,21,0.25);}
+
+  /* SKILLS 3-BOX LAYOUT */
+  .skills-container{display:grid;grid-template-columns:1fr;gap:40px;}
+  .skill-topic-card{
+    background:var(--card-bg);border:1px solid var(--line);border-radius:24px;
+    padding:32px;box-shadow:0 8px 24px -12px rgba(35,24,21,0.1);
+  }
+  .skill-topic-head{
+    display:flex;justify-content:space-between;align-items:center;
+    margin-bottom:24px;border-bottom:2px solid var(--sceptre-red);padding-bottom:12px;
+  }
+  .skill-topic-head h3{
+    font-size:1.35rem;color:var(--sceptre-red);display:flex;align-items:center;gap:12px;
+  }
+  .skill-topic-head .skill-num{
+    font-family:'JetBrains Mono',monospace;font-size:0.8rem;
+    background:var(--cerulean-blue);color:var(--java-brown);padding:4px 12px;border-radius:12px;
+    font-weight:700;
+  }
+  .skill-grid-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;}
+  .boxes-trio{display:flex;flex-direction:column;gap:16px;}
+  .box-item{border-radius:16px;padding:20px 22px;border:1px solid var(--line);transition:transform .2s ease;}
+  .box-item:hover{transform:translateX(4px);}
+  .box-item.para-box{background:var(--transparent-yellow);border-color:#E6D8A6;}
+  .box-item.para-box p{font-size:0.96rem;color:var(--java-brown);line-height:1.6;font-weight:500;}
+  .box-item.pointer-box-1{background:var(--paper);border-left:4px solid var(--sceptre-red);}
+  .box-item.pointer-box-2{background:var(--paper);border-left:4px solid var(--cerulean-blue);}
+  .box-label{
+    font-family:'JetBrains Mono',monospace;font-size:0.7rem;
+    color:var(--sceptre-red);text-transform:uppercase;font-weight:700;margin-bottom:6px;display:block;
+  }
+  .box-item.pointer-box-2 .box-label{color:var(--potting-soil);}
+  .box-title{font-weight:700;font-size:0.95rem;color:var(--java-brown);margin-bottom:4px;}
+  .box-desc{font-size:0.88rem;color:var(--potting-soil);}
+  .skill-image-box{
+    aspect-ratio:16/11;border-radius:20px;overflow:hidden;
+    background:var(--potting-soil);position:relative;border:1px solid var(--line);
+    box-shadow:0 10px 25px -10px rgba(35,24,21,0.25);
+  }
+  .skill-image-box img{width:100%;height:100%;object-fit:cover;}
+  .skill-image-caption{
+    position:absolute;bottom:0;inset-inline:0;background:rgba(35,24,21,0.85);
+    color:var(--transparent-yellow);font-family:'JetBrains Mono',monospace;font-size:0.72rem;
+    padding:10px 16px;backdrop-filter:blur(4px);
+  }
+
+  /* MODAL */
+  .modal-backdrop{
+    position:fixed;inset:0;z-index:100;background:rgba(35,24,21,0.88);
+    backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;
+    padding:24px;opacity:0;transition:opacity .25s ease;
+  }
+  .modal-backdrop.active{display:flex;opacity:1;}
+  .modal-window{
+    background:var(--paper);width:100%;max-width:960px;max-height:90vh;
+    border-radius:24px;overflow:hidden;display:flex;flex-direction:column;
+    box-shadow:0 30px 60px rgba(0,0,0,0.5);position:relative;
+  }
+  .modal-header{
+    padding:18px 24px;background:var(--paper);border-bottom:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .modal-title{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--sceptre-red);}
+  .modal-close{
+    background:var(--transparent-yellow);border:1px solid #E6D8A6;width:36px;height:36px;border-radius:50%;
+    font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    color:var(--java-brown);transition:background .2s;
+  }
+  .modal-close:hover{background:var(--sceptre-red);color:#fff;}
+  .modal-body{
+    flex:1;overflow-y:auto;padding:0;background:#1a1312;display:flex;
+    align-items:center;justify-content:center;min-height:480px;position:relative;
+  }
+  .modal-body iframe{width:100%;height:100%;min-height:540px;border:none;}
+  .modal-body img{max-width:100%;max-height:80vh;object-fit:contain;padding:16px;}
+
+  /* ACHIEVEMENTS */
+  .ach-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .ach-card{
+    background:var(--java-brown);color:#fff;padding:28px 22px;border-radius:20px;
+    display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--potting-soil);
+  }
+  .ach-card .big{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:700;color:var(--transparent-yellow);line-height:1.1;}
+  .ach-card .ach-subtitle{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--cerulean-blue);margin-top:6px;font-weight:600;}
+  .ach-card p{color:#E6D9D5;font-size:0.88rem;margin-top:8px;line-height:1.5;}
+
+  /* TESTIMONIAL */
+  .testimonial-wrap{max-width:780px;margin:0 auto;text-align:center;position:relative;}
+  .quote-mark{font-family:'Fraunces',serif;font-size:5rem;color:var(--sceptre-red);line-height:1;margin-bottom:-10px;}
+  .testimonial-wrap blockquote{
+    margin:0;font-family:'Fraunces',serif;font-size:clamp(1.3rem,2.6vw,1.65rem);
+    font-weight:500;font-style:italic;color:var(--java-brown);line-height:1.45;
+  }
+  .testimonial-who{margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:0.85rem;color:var(--potting-soil);}
+
+  /* CONTACT */
+  footer{background:var(--java-brown);color:#fff;padding:80px 0 40px;}
+  .contact-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;}
+  footer h2{color:#fff;font-size:clamp(1.9rem,4vw,2.7rem);}
+  footer p{color:#D6C9C5;}
+  .contact-list{list-style:none;padding:0;margin-top:28px;}
+  .contact-list li{padding:14px 0;border-top:1px solid var(--potting-soil);font-size:0.95rem;}
+  .contact-list li:last-child{border-bottom:1px solid var(--potting-soil);}
+  .contact-list span{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--cerulean-blue);display:block;margin-bottom:4px;}
+  .contact-list a{text-decoration:none;color:#fff;font-weight:500;}
+  .contact-list a:hover{color:var(--transparent-yellow);}
+  .foot-bottom{margin-top:56px;padding-top:24px;border-top:1px solid var(--potting-soil);font-size:0.8rem;color:#A89894;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+
+  @media (max-width:960px){
+    .work-grid-2,.skill-grid-layout{grid-template-columns:1fr;}
+    .ach-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:860px){
+    .hero-inner,.about-grid,.contact-inner{grid-template-columns:1fr;}
+    .byline-card{transform:none;}
+    .nav-links{
+      position:absolute;top:100%;left:0;right:0;background:var(--paper);
+      flex-direction:column;padding:20px 32px;border-bottom:1px solid var(--line);
+      display:none;align-items:flex-start;
+    }
+    .nav-links.open{display:flex;}
+    .nav-toggle{display:block;}
+  }
+  @media (max-width:600px){
+    .wrap{padding:0 20px;}
+    section{padding:68px 0;}
+    .sub-division,.skill-topic-card{padding:20px;}
+    .ach-grid{grid-template-columns:1fr;}
+    .exp-item{grid-template-columns:1fr;gap:8px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-name">Nitya<span>.</span></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#work-archive">Work Archive</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#achievements">Impact</a></li>
+      <li><a href="#contact" class="nav-cta">Say hi</a></li>
+      <li><button class="edit-toggle-btn" id="editToggleBtn" onclick="toggleEditMode()">✏️ Edit Text</button></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="blob" style="top:-80px; right:-60px; width:320px; height:320px;" viewBox="0 0 200 200">
+    <path fill="#A5BCD6" d="M45,-58.4C57.9,-49.7,67.2,-34.9,71.4,-18.5C75.7,-2.1,74.8,15.9,67.1,30.4C59.4,44.9,44.9,55.9,29.1,62.1C13.3,68.4,-3.8,69.9,-20.4,65.9C-37,61.9,-53.2,52.3,-63,38.1C-72.9,23.9,-76.3,5.1,-72.6,-11.9C-68.9,-28.9,-58,-44.1,-43.9,-52.9C-29.8,-61.7,-14.9,-64.1,1.6,-66.1C18.1,-68.1,32.1,-67.1,45,-58.4Z" transform="translate(100 100)" opacity="0.35"/>
+  </svg>
+  <svg class="blob" style="bottom:-100px; left:-60px; width:280px; height:280px;" viewBox="0 0 200 200">
+    <path fill="#4D0E12" d="M39.5,-51.6C50.6,-42.5,58.5,-29.5,62.1,-15.1C65.7,-0.7,65,15.1,58.1,28.2C51.2,41.3,38.1,51.7,23.5,57.6C8.9,63.5,-7.2,64.9,-22.1,60.5C-37,56.1,-50.7,45.9,-58.7,32.1C-66.7,18.3,-69,0.9,-64.9,-14.6C-60.8,-30.1,-50.3,-43.7,-37.1,-52.7C-23.9,-61.7,-8,-66,4.9,-63.9C17.8,-61.8,28.4,-60.7,39.5,-51.6Z" transform="translate(100 100)" opacity="0.12"/>
+  </svg>
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Content Strategist · Copywriter · Brand Storyteller</span>
+      <h1>Turning <span class="mark">complicated ideas</span> into content people actually stop for.</h1>
+      <p class="lede">I'm Nitya, a Content Strategist and Copywriter who works across finance, healthcare, fashion, travel, wellness, and social impact. I enjoy taking subjects that can feel dense or intimidating and turning them into content that feels clear, human, and worth paying attention to.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-solid">Get in touch</a>
+        <a href="#work-archive" class="btn btn-outline">See the work</a>
+      </div>
+    </div>
+    <div class="byline-card">
+      <div class="stat"><span>Currently</span><span>Content Strategist, Social Lunatics</span></div>
+      <div class="stat"><span>Based in</span><span>Mumbai, India</span></div>
+      <div class="stat"><span>Active clients</span><span>7 across 6 industries</span></div>
+      <div class="stat"><span>Specialties</span><span>Finance, Healthcare &amp; Brand Storytelling</span></div>
+      <div class="stat"><span>Platforms</span><span>Instagram · YouTube · LinkedIn</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow">01 : About</span>
+      <h2>Hello, I'm Nitya Wanage</h2>
+      <p style="margin-top:24px;">For every brand I write for, there's a story worth telling well. As a Content Strategist, I've spent the last two years turning dense, easy-to-overcomplicate subjects, especially finance, healthcare, and tech, into content that feels approachable, reliable, and worth someone's scroll.</p>
+      <p>I've built content strategy, campaign concepts, and copy for brands in finance, healthcare (Sanofi, Dr. Reddy's, Alkem, Razo), fashion (Tulsi Sarees), travel, interior design, and social impact (CJ Foundation), carrying that thinking across Instagram, YouTube, and LinkedIn, as well as on-ground exhibition campaigns.</p>
+      <p>I hold a Bachelor's degree in Mass Media and Communication, and I genuinely enjoy adding my own creative point of view to whatever I'm building.</p>
+      <div class="pill-row">
+        <span class="pill">Copywriting</span>
+        <span class="pill">Content Strategy</span>
+        <span class="pill">Brand Storytelling</span>
+        <span class="pill">Pharma &amp; Healthcare Research</span>
+        <span class="pill">Campaign Ideation</span>
+        <span class="pill">Script Writing</span>
+      </div>
+    </div>
+    <div class="about-side">
+      <h3>How I work</h3>
+      <p>I start with the client's audience and goal, then build a content strategy and voice around it, not the other way around. Every script, caption, research report, or campaign concept is fact-checked, simplified, and shaped to fit the platform it's landing on.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">02 : Experience</span>
+      <h2>Where I've worked</h2>
+    </div>
+    <div class="timeline">
+      <div class="exp-item">
+        <div class="exp-date">Sep 2025 – Jul 2026</div>
+        <div class="exp-role">
+          <h3>Content Strategist</h3>
+          <span class="company">Social Lunatics</span>
+          <p>As a Content Strategist, I managed content strategy, copywriting, and storytelling for brands across finance, fashion, travel, interior design, and social impact.</p>
+          <p>My work included developing content direction, social media copy, short-form scripts, and brand communication while working closely with clients to shape ideas into clear, engaging content.</p>
+          <p>I also worked on building CJ Foundation's digital presence from the ground up, helping establish its content identity, storytelling direction, and social media communication.</p>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">Sep 2024 – Dec 2025</div>
+        <div class="exp-role">
+          <h3>Social Media Executive</h3>
+          <span class="company">The Brand Brewery</span>
+          <p>At The Brand Brewery, I worked across healthcare, pharma, fashion, and experiential campaigns.</p>
+          <p>My work included campaign communication and research for brands such as Sanofi, Dr. Reddy's, Alkem, and Razo, where I developed a strong understanding of research-led communication.</p>
+          <p>I also worked on Taiwan Excellence's exhibition and activation campaigns, including the development of an interactive VoxPop concept and demo video. Alongside this, I managed social media content and festive campaign communication for Tulsi Sarees.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">03 : Education</span>
+      <h2>Academic background</h2>
+    </div>
+    <div class="edu-card">
+      <div class="edu-icon">TC</div>
+      <div>
+        <h3>Bachelor of Arts, Mass Media &amp; Communication</h3>
+        <span class="edu-sub">Thakur College of Science and Commerce · 2022 – 2025</span>
+        <p>My time here is where the pull toward content strategy, brand communications, and copywriting started, turning media studies into hands-on strategic thinking and creative execution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK ARCHIVE -->
+<section id="work-archive">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">04 : Work Archive &amp; Case Studies</span>
+      <h2>Explore work by category</h2>
+      <p style="margin-top:12px;">I've organised my work around the skills I use most often, from strategy and research to writing, storytelling, and campaigns.</p>
+      <p style="margin-top:8px;">Each project gives a closer look at the thinking behind the work, with supporting decks, documents, videos, and campaign assets available to explore.</p>
+    </div>
+  </div>
+
+  <div class="category-nav">
+    <div class="wrap">
+      <div class="category-pills">
+        <button class="cat-pill active" onclick="scrollToCat('cat-all')">✦ All Work</button>
+        <button class="cat-pill" onclick="scrollToCat('cat-storytelling')">Brand Storytelling</button>
+        <button class="cat-pill" onclick="scrollToCat('cat-campaigns')">Campaigns &amp; Activations</button>
+        <button class="cat-pill" onclick="scrollToCat('cat-strategy')">Content Strategy</button>
+        <button class="cat-pill" onclick="scrollToCat('cat-copywriting')">Copywriting</button>
+        <button class="cat-pill" onclick="scrollToCat('cat-research')">Pharma Research</button>
+        <button class="cat-pill" onclick="scrollToCat('cat-scripts')">Short-Form Scripts</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- BRAND STORYTELLING -->
+    <div class="category-block" id="cat-storytelling">
+      <div class="category-header">
+        <h3>Brand Storytelling</h3>
+        <span class="cat-count">2 Case Studies</span>
+      </div>
+
+      <div class="sub-division">
+        <div class="sub-head">
+          <h4>Building Digital Presence from Scratch</h4>
+          <span class="sub-client">CJ Foundation · Social Impact</span>
+        </div>
+        <div class="work-grid-2">
+          <div>
+            <p class="sub-desc">CJ Foundation approached us in late March with a new digital presence and the need to establish a clear identity online.</p>
+            <p class="sub-desc">I helped shape the brand's content direction, storytelling, tone of voice, and community-focused communication. By early August, the page had grown from zero to 3,700+ followers organically, with the content building a growing and engaged community around the foundation's work.</p>
+            <div class="my-role">My role: Brand Storytelling · Content Strategy · Social Media Communication</div>
+            <div class="media-actions">
+              <button class="view-btn primary" onclick="openEmbeddedModal('CJ Foundation Brand Strategy 1.1', 'image', 'images/cj-foundation-1-1.jpg')">🖼 View Case Study Slide 1.1</button>
+              <button class="view-btn" onclick="openEmbeddedModal('CJ Foundation Brand Strategy 1.2', 'image', 'images/cj-foundation-1-2.jpg')">🖼 View Case Study Slide 1.2</button>
+            </div>
+          </div>
+          <div class="inline-media-preview" onclick="openEmbeddedModal('CJ Foundation Case Study', 'image', 'images/cj-foundation-1-1.jpg')">
+            <img src="images/cj-foundation-1-1.jpg" alt="CJ Foundation Case Preview" onerror="this.style.display='none';">
+            <div class="media-overlay-play">🔍</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-division">
+        <div class="sub-head">
+          <h4>Heritage Silk Craftsmanship &amp; Storytelling</h4>
+          <span class="sub-client">Tulsi Sarees · Fashion &amp; Culture</span>
+        </div>
+        <div class="work-grid-2">
+          <div>
+            <p class="sub-desc">For Tulsi Sarees, I explored the stories behind India's weaving traditions and brought them into the brand's digital communication.</p>
+            <p class="sub-desc">The content connected heritage, craftsmanship, festive culture, and contemporary fashion, helping position traditional sarees within a relatable narrative.</p>
+            <div class="my-role">My role: Brand Storytelling · Social Media Copy · Campaign Communication</div>
+            <div class="media-actions">
+              <button class="view-btn primary" onclick="openEmbeddedModal('Tulsi Sarees Strategic Content Execution', 'doc', 'https://drive.google.com/file/d/1wnNDvg50jg0BPj6nyarYxjblDap3mQyT/preview')">📄 Preview Strategy Document</button>
+              <button class="view-btn" onclick="openEmbeddedModal('Tulsi Sarees Heritage Visual', 'image', 'images/tulsi-sarees.jpg')">🖼 View Campaign Image</button>
+            </div>
+          </div>
+          <div class="inline-media-preview" onclick="openEmbeddedModal('Tulsi Sarees Heritage Visual', 'image', 'images/tulsi-sarees.jpg')">
+            <img src="images/tulsi-sarees.jpg" alt="Tulsi Sarees Heritage Visual" onerror="this.style.display='none';">
+            <div class="media-overlay-play">🔍</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAMPAIGNS & ACTIVATIONS -->
+    <div class="category-block" id="cat-campaigns">
+      <div class="category-header">
+        <h3>Campaigns &amp; Activations</h3>
+        <span class="cat-count">3 Campaigns</span>
+      </div>
+
+      <div class="sub-division">
+        <div class="sub-head">
+          <h4>Public VoxPop Activation &amp; Demo Video</h4>
+          <span class="sub-client">Taiwan Excellence · On-Ground &amp; Digital</span>
+        </div>
+        <div class="work-grid-2">
+          <div>
+            <p class="sub-desc">I developed an interactive Walk Swap activation concept for Taiwan Excellence and created a demo video to help the client visualise how the experience would work on-ground.</p>
+            <p class="sub-desc">The project focused on making the activation easy to understand while demonstrating how audience interaction could create stronger brand recall.</p>
+            <div class="my-role">My role: Campaign Ideation · Activation Strategy · Demo Video Concept</div>
+            <div class="media-actions">
+              <button class="view-btn primary" onclick="openEmbeddedModal('Taiwan Excellence VoxPop Demo Video', 'video', 'https://drive.google.com/file/d/1nJfi3xp3jmADvsKh4FK1Gsf_A3p0KiSy/preview')">🎬 Play VoxPop Demo Video</button>
+              <button class="view-btn" onclick="openEmbeddedModal('Taiwan VoxPop Activation Plan', 'doc', 'https://drive.google.com/file/d/17478M_KZLX7fLuSOtxTLwQgAlb_-8qiF/preview')">📄 Preview Activation Plan</button>
+              <button class="view-btn" onclick="openEmbeddedModal('Taiwan VoxPop Presentation', 'doc', 'https://drive.google.com/file/d/1oceqcBtIf3bcD28EZSjYHgHXNQBhzwKu/preview')">📊 Preview Presentation PPTX</button>
+            </div>
+          </div>
+          <div class="inline-media-preview" onclick="openEmbeddedModal('Taiwan Excellence VoxPop Demo Video', 'video', 'https://drive.google.com/file/d/1nJfi3xp3jmADvsKh4FK1Gsf_A3p0KiSy/preview')">
+            <div class="media-overlay-play">▶ Play Video</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-division">
+        <div class="sub-head">
+          <h4>#NavrangWithTulsi Seasonal Campaign</h4>
+          <span class="sub-client">Tulsi Sarees · Festive Strategy</span>
+        </div>
+        <div class="work-grid-2">
+          <div>
+            <p class="sub-desc">I developed the #NavrangWithTulsi campaign around the nine colours of Navratri, using daily saree edits, styling content, and festive hooks to create a consistent narrative throughout the celebration.</p>
+            <div class="my-role">My role: Campaign Ideation · Copywriting · Social Media Strategy</div>
+            <div class="media-actions">
+              <button class="view-btn primary" onclick="openEmbeddedModal('#NavrangWithTulsi Campaign Doc', 'doc', 'https://drive.google.com/file/d/1u6B_2Z4PY39h8-phzEXz9PeO0aoFsh2H/preview')">📄 Read Navratri Campaign Plan</button>
+              <button class="view-btn" onclick="openEmbeddedModal('#NavrangWithTulsi Visual', 'image', 'images/tulsi-navratri.jpg')">🖼 View Campaign Creative</button>
+            </div>
+          </div>
+          <div class="inline-media-preview" onclick="openEmbeddedModal('#NavrangWithTulsi Visual', 'image', 'images/tulsi-navratri.jpg')">
+            <img src="images/tulsi-navratri.jpg" alt="Navratri Campaign Visual" onerror="this.style.display='none';">
+            <div class="media-overlay-play">🔍</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-division">
+        <div class="sub-head">
+          <h4>Expo 2025 &amp; Diwali Campaign Communication</h4>
+          <span class="sub-client">Taiwan Excellence · Exhibition Campaigns</span>
+        </div>
+        <div class="work-grid-2">
+          <div>
+            <p class="sub-desc">I worked on communication for the Taiwan Excellence Expo 2025 presence, developing ideas for on-ground engagement alongside digital festive communication around Diwali.</p>
+            <div class="my-role">My role: Campaign Communication · Content Ideation · On-Ground Strategy</div>
+            <div class="media-actions">
+              <button class="view-btn primary" onclick="openEmbeddedModal('Taiwan Excellence Expo 2025 Deck', 'doc', 'https://drive.google.com/file/d/1fa1wa38juPwMmVuqEsG3qWnCrbgkKWPU/preview')">📑 Read Expo 2025 PDF Deck</button>
+              <button class="view-btn" onclick="openEmbeddedModal('Taiwan Expo Visual', 'image', 'images/taiwan-expo.png')">🖼 View Expo Booth Image</button>
+              <button class="view-btn" onclick="openEmbeddedModal('TE Diwali Campaign Doc', 'doc', 'https://drive.google.com/file/d/1DBdNT3nRFvEEKjxeD6ZCMp-Onz-2rIzj/preview')">📄 Read Diwali Campaign Doc</button>
+            </div>
+          </div>
+          <div class="inline-media-preview" onclick="openEmbeddedModal('Taiwan Expo Visual', 'image', 'images/taiwan-expo.png')">
+            <img src="images/taiwan-expo.png" alt="Taiwan Expo Visual" onerror="this.style.display='none';">
+            <div class="media-overlay-play">🔍</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTENT STRATEGY -->
+    <div class="category-block" id="cat-strategy">
+      <div class="category-header">
+        <h3>Content Strategy</h3>
+        <span class="cat-count">2 Strategies</span>
+      </div>
+
+      <div class="sub-division">
+        <div class="sub-head">
+          <h4>"Why Breathe Polluted Air?" Tech Innovation Strategy</h4>
+          <span class="sub-client">PlantRich &amp; LuftQi · B2B &amp; Consumer Tech</span>
+        </div>
+        <div class="work-grid-2">
+          <div>
+            <p class="sub-desc">I developed a content strategy for LuftQi, an award-winning air purification innovation, designed to communicate the problem of air pollution while introducing the technology as a relevant solution.</p>
+            <p class="sub-desc">The strategy was adapted across LinkedIn and Instagram, with messaging designed for business decision-makers and wellness-conscious consumers.</p>
+            <div class="my-role">My role: Content Strategy · Audience Research · Social Media Direction</div>
+            <div class="media-actions">
+              <button class="view-btn primary" onclick="openEmbeddedModal('Brand Development Strategy Doc', 'doc', 'https://drive.google.com/file/d/1IHSiFhYdJmz1T43v2nxwtKKyzmKEt3Zd/preview')">📄 Preview Strategy Document</button>
+              <button class="view-btn" onclick="openEmbeddedModal('LuftQi Instagram Grid Visual', 'image', 'images/luftqi-instagram.jpg')">🖼 View Instagram Grid</button>
+              <button class="view-btn" onclick="openEmbeddedModal('LuftQi LinkedIn Visual', 'image', 'images/luftqi-linkedin.jpg')">🖼 View LinkedIn Post</button>
+            </div>
+          </div>
+          <div class="inline-media-preview" onclick="openEmbeddedModal('LuftQi Instagram Grid Visual', 'image', 'images/luftqi-instagram.jpg')">
+            <img src="images/luftqi-instagram.jpg" alt="LuftQi Grid Preview" onerror="this.style.display='none';">
+            <div class="media-overlay-play">🔍</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-division">
+        <div class="sub-head">
+          <h4>Hospitality Brand Social Media Strategy</h4>
+          <span class="sub-client">The Bharat Hospitality Group · Hospitality</span>
+        </div>
+        <div class="work-grid-2">
+          <div>
+            <p class="sub-desc">I developed a digital communication and social media strategy for luxury hospitality and dining properties, focusing on how each property could maintain its own identity while fitting within the larger brand ecosystem.</p>
+            <div class="my-role">My role: Content Strategy · Brand Communication · Social Media Planning</div>
+            <div class="media-actions">
+              <button class="view-btn primary" onclick="openEmbeddedModal('Bharat Hospitality Group Strategy', 'doc', 'https://drive.google.com/file/d/1VzlGks1T1ERWE7ACcRiXkQoaJTpBZicz/preview')">📄 Read Hospitality Strategy Doc</button>
+            </div>
+          </div>
+          <div class="inline-media-preview" onclick="openEmbeddedModal('Bharat Hospitality Group Strategy', 'doc', 'https://drive.google.com/file/d/1VzlGks1T1ERWE7ACcRiXkQoaJTpBZicz/preview')">
+            <div class="media-overlay-play">📑 Preview Strategy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COPYWRITING -->
+    <div class="category-block" id="cat-copywriting">
+      <div class="category-header">
+        <h3>Copywriting</h3>
+        <span class="cat-count">2 Campaign Pieces</span>
+      </div>
+
+      <div class="sub-division">
+        <div class="sub-head">
+          <h4>"Your First Salary Is Here" Educational Carousel</h4>
+          <span class="sub-client">PlantRich · Personal Finance</span>
+        </div>
+        <div class="work-grid-2">
+          <div>
+            <p class="sub-desc">I wrote an educational carousel aimed at young professionals navigating their first salary. The challenge was to make financial planning feel approachable rather than overwhelming.</p>
+            <p class="sub-desc">The copy broke down budgeting, emergency funds, and income allocation into simple, relatable ideas without relying on financial jargon.</p>
+            <div class="my-role">My role: Research · Copywriting · Educational Content</div>
+            <div class="media-actions">
+              <button class="view-btn primary" onclick="openEmbeddedModal('First Salary Cover Slide', 'image', 'images/first-salary.jpg')">🖼 Preview First Salary Carousel Slide</button>
+            </div>
+          </div>
+          <div class="inline-media-preview" onclick="openEmbeddedModal('First Salary Cover Slide', 'image', 'images/first-salary.jpg')">
+            <img src="images/first-salary.jpg" alt="First Salary Slide Preview" onerror="this.style.display='none';">
+            <div class="media-overlay-play">🔍</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-division">
+        <div class="sub-head">
+          <h4>Regional Cultural Ad Copywriting</h4>
+          <span class="sub-client">Tulsi Sarees · Regional Advertising</span>
+        </div>
+        <div class="work-grid-2">
+          <div>
+            <p class="sub-desc">For Tulsi Sarees' Odisha market communication, I developed regional advertising copy that brought local language and cultural familiarity into the brand's messaging.</p>
+            <p class="sub-desc">The focus was on making the communication feel natural to the audience while retaining the brand's identity.</p>
+            <div class="my-role">My role: Copywriting · Regional Communication · Cultural Adaptation</div>
+            <div class="media-actions">
+              <button class="view-btn primary" onclick="openEmbeddedModal('Tulsi Saree Odia Campaign Slide', 'image', 'images/tulsi-odia.jpeg')">🖼 View Regional Ad Copy Slide</button>
+            </div>
+          </div>
+          <div class="inline-media-preview" onclick="openEmbeddedModal('Tulsi Saree Odia Campaign Slide', 'image', 'images/tulsi-odia.jpeg')">
+            <img src="images/tulsi-odia.jpeg" alt="Tulsi Saree Slide Preview" onerror="this.style.display='none';">
+            <div class="media-overlay-play">🔍</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHARMA RESEARCH -->
+    <div class="category-block" id="cat-research">
+      <div class="category-header">
+        <h3>Pharma Research &amp; Healthcare Insights</h3>
+        <span class="cat-count">3 Medical Accounts</span>
+      </div>
+
+      <div class="sub-division">
+        <div class="sub-head">
+          <h4>Diabetes &amp; Ozempic Strategic Research</h4>
+          <span class="sub-client">Dr. Reddy's Laboratories · Metabolic Health</span>
+        </div>
+        <div class="work-grid-2">
+          <div>
+            <p class="sub-desc">I conducted research into diabetes management communication, including an analysis of global Ozempic communication trends and the wider competitive landscape, to understand and create a launch strategy for the first-ever, made-in-India semaglutide.</p>
+            <p class="sub-desc">The work involved translating complex medical and market information into insights that could inform clearer brand communication.</p>
+            <div class="media-actions">
+              <button class="view-btn primary" onclick="openEmbeddedModal('Diabetes Campaign by Dr. Reddy', 'doc', 'https://drive.google.com/file/d/1jVYNfHecUoE5G1uqjubA7-MVNS2eQp3A/preview')">📄 Read Diabetes Campaign Doc</button>
+              <button class="view-btn" onclick="openEmbeddedModal('Research On Ozempic PPTX', 'doc', 'https://drive.google.com/file/d/1wnM7jdw2ztLFV0fi8SBxy6ogxyYipgjT/preview')">📊 Preview Ozempic Research Decks</button>
+            </div>
+          </div>
+          <div class="inline-media-preview" onclick="openEmbeddedModal('Research On Ozempic PPTX', 'doc', 'https://drive.google.com/file/d/1wnM7jdw2ztLFV0fi8SBxy6ogxyYipgjT/preview')">
+            <div class="media-overlay-play">📊 View Ozempic Deck</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-division">
+        <div class="sub-head">
+          <h4>Pan-D Gastroenterology Campaign Research</h4>
+          <span class="sub-client">Alkem Laboratories · Gastro Health</span>
+        </div>
+        <div class="work-grid-2">
+          <div>
+            <p class="sub-desc">I researched the new packaging of Alkem's flagship Pan-D medication, working on the ideation of on-ground things that can be done to make people aware of counterfeits in the market, converting medical literature into clear public awareness narratives.</p>
+            <div class="media-actions">
+              <button class="view-btn primary" onclick="openEmbeddedModal('Alkem Pan-D Campaign Ideas', 'doc', 'https://drive.google.com/file/d/1485OgXUMxiw03Tk8bOzAKYPeQZGkump3/preview')">📄 Read Alkem Pan-D Research Doc</button>
+            </div>
+          </div>
+          <div class="inline-media-preview" onclick="openEmbeddedModal('Alkem Pan-D Campaign Ideas', 'doc', 'https://drive.google.com/file/d/1485OgXUMxiw03Tk8bOzAKYPeQZGkump3/preview')">
+            <div class="media-overlay-play">📄 Preview Research Doc</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-division">
+        <div class="sub-head">
+          <h4>Omez DSR+ "Acid Attackers" Culmination Ideas</h4>
+          <span class="sub-client">Dr. Reddy's Omez · Digestive Care</span>
+        </div>
+        <div class="work-grid-2">
+          <div>
+            <p class="sub-desc">Creative culmination campaign concepts and patient communication strategy for Omez DSR+ ("Acid Attackers" awareness campaign).</p>
+            <div class="media-actions">
+              <button class="view-btn primary" onclick="openEmbeddedModal('Omez DSR+ Acid Attackers Doc', 'doc', 'https://drive.google.com/file/d/1n-Bir4Hlkwvmor4w85nN0txlLc4nuNVa/preview')">📄 Read Omez DSR+ Campaign Doc</button>
+            </div>
+          </div>
+          <div class="inline-media-preview" onclick="openEmbeddedModal('Omez DSR+ Acid Attackers Doc', 'doc', 'https://drive.google.com/file/d/1n-Bir4Hlkwvmor4w85nN0txlLc4nuNVa/preview')">
+            <div class="media-overlay-play">📄 Preview Campaign Doc</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SHORT-FORM SCRIPTS -->
+    <div class="category-block" id="cat-scripts">
+      <div class="category-header">
+        <h3>Short-Form Scripts</h3>
+        <span class="cat-count">2 Video Scripts</span>
+      </div>
+
+      <div class="sub-division">
+        <div class="sub-head">
+          <h4>Razo "The Gut Feed" Celebrity Pre-Buzz Video Script</h4>
+          <span class="sub-client">Razo (Dr. Reddy's) x Soha Ali Khan · Video Campaign</span>
+        </div>
+        <div class="work-grid-2">
+          <div>
+            <p class="sub-desc">I wrote a celebrity pre-buzz script for Razo's "The Gut Feed" campaign featuring Soha Ali Khan.</p>
+            <p class="sub-desc">The script is for an announcement reel to inform doctors about the new initiative by Razo, which will help people gain awareness of gut health. This is also an invite for doctors to join this initiative and debunk all the misinformation about gut health.</p>
+            <div class="my-role">My role: Scriptwriting · Research</div>
+            <div class="media-actions">
+              <button class="view-btn primary" onclick="openEmbeddedModal('Razo Soha Ali Khan Script', 'doc', 'https://drive.google.com/file/d/1hz7NxuCKJF7DqhethAmuWuYENxPH3Wy6/preview')">📄 Read Video Script (Soha Ali Khan)</button>
+              <button class="view-btn" onclick="openEmbeddedModal('Razo Pre-Buzz Content', 'doc', 'https://drive.google.com/file/d/17Nd-P0RhgFslfVLP9b49nMEu7EzEIWGm/preview')">📄 Read Pre-Buzz Content Doc</button>
+              <button class="view-btn" onclick="openEmbeddedModal('Razo Shoot Still 1', 'image', 'images/razo-shoot-1.png')">📸 View Shoot Photo 1</button>
+              <button class="view-btn" onclick="openEmbeddedModal('Razo Shoot Still 2', 'image', 'images/razo-shoot-2.png')">📸 View Shoot Photo 2</button>
+            </div>
+          </div>
+          <div class="inline-media-preview" onclick="openEmbeddedModal('Razo Shoot Still 1', 'image', 'images/razo-shoot-1.png')">
+            <img src="images/razo-shoot-1.png" alt="Razo Shoot Photo" onerror="this.style.display='none';">
+            <div class="media-overlay-play">📸 View Shoot Still</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-division">
+        <div class="sub-head">
+          <h4>"Windfall of Money" Podcast-Style Reel Script</h4>
+          <span class="sub-client">PlantRich · Financial Literacy Reel</span>
+        </div>
+        <div class="work-grid-2">
+          <div>
+            <p class="sub-desc">Here is a podcast-style reel script I wrote, exploring how a salary gets divided after it hits your account.</p>
+            <p class="sub-desc">These scripts take a conversational approach to make personal finance feel relevant to a younger audience, while keeping the information simple and actionable.</p>
+            <div class="my-role">My role: Scriptwriting · Financial Research · Short-Form Content</div>
+            <div class="media-actions">
+              <button class="view-btn primary" onclick="openEmbeddedModal('PlantRich Podcast Script', 'doc', 'https://drive.google.com/file/d/1svFLTGXjuRGYqLHhNU6WIGZV2hA9BB4e/preview')">📄 Read Podcast Reel Script</button>
+              <button class="view-btn" onclick="openEmbeddedModal('PlantRich Shoot Photo 1', 'image', 'images/plantrich-shoot-1.jpeg')">📸 View Thumbnail 1</button>
+              <button class="view-btn" onclick="openEmbeddedModal('PlantRich Shoot Photo 2', 'image', 'images/plantrich-shoot-2.jpeg')">📸 View Thumbnail 2</button>
+            </div>
+          </div>
+          <div class="inline-media-preview" onclick="openEmbeddedModal('PlantRich Shoot Photo 1', 'image', 'images/plantrich-shoot-1.jpeg')">
+            <img src="images/plantrich-shoot-1.jpeg" alt="PlantRich Shoot Still" onerror="this.style.display='none';">
+            <div class="media-overlay-play">📸 View Shoot Still</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS WITH 3 TEXT BOXES PER TOPIC & PICTURES -->
+<section id="skills" class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">05 : Core Capabilities &amp; Skills</span>
+      <h2>What I bring to a brand</h2>
+      <p style="margin-top:12px;">A closer look at the strategic capabilities, deliverables, and platform executions I bring to every project.</p>
+    </div>
+
+    <div class="skills-container">
+
+      <!-- SKILL 1: BRAND STORYTELLING -->
+      <div class="skill-topic-card">
+        <div class="skill-topic-head">
+          <h3><span class="skill-num">01</span> Brand Storytelling &amp; Identity</h3>
+        </div>
+        <div class="skill-grid-layout">
+          <div class="boxes-trio">
+            <div class="box-item para-box">
+              <span class="box-label">What I do</span>
+              <p>I shape core brand narratives that turn new or emerging organisations into stories people connect with. From defining tone of voice and content pillars to scaling organic community reach from scratch.</p>
+            </div>
+            <div class="box-item pointer-box-1">
+              <span class="box-label">Key deliverable</span>
+              <div class="box-title">Brand Positioning &amp; Content Direction</div>
+              <div class="box-desc">Audience research, tone mapping, story guidelines, and editorial calendars for social platforms.</div>
+            </div>
+            <div class="box-item pointer-box-2">
+              <span class="box-label">Where I've applied this</span>
+              <div class="box-title">CJ Foundation &amp; Tulsi Sarees</div>
+              <div class="box-desc">Built CJ Foundation's digital presence from 0 to 3,700+ followers organically. Positioned Tulsi Sarees within heritage and contemporary fashion storytelling.</div>
+            </div>
+          </div>
+          <div class="skill-image-box" onclick="openEmbeddedModal('CJ Foundation Case Study Visual', 'image', 'images/cj-foundation-1-1.jpg')">
+            <img src="images/cj-foundation-1-1.jpg" alt="Brand Storytelling Preview">
+            <div class="skill-image-caption">🖼 CJ Foundation Brand Storytelling</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILL 2: CAMPAIGN IDEATION -->
+      <div class="skill-topic-card">
+        <div class="skill-topic-head">
+          <h3><span class="skill-num">02</span> Campaign Ideation &amp; Activations</h3>
+        </div>
+        <div class="skill-grid-layout">
+          <div class="boxes-trio">
+            <div class="box-item para-box">
+              <span class="box-label">What I do</span>
+              <p>I design campaign concepts that connect digital storytelling with on-ground activations. This includes creating activation decks and demo videos so clients can visualise execution before launch.</p>
+            </div>
+            <div class="box-item pointer-box-1">
+              <span class="box-label">Key deliverable</span>
+              <div class="box-title">Activation Decks &amp; Campaign Blueprints</div>
+              <div class="box-desc">Interactive crowd concepts, exhibition booth ideas, demo activation videos, and seasonal campaign plans.</div>
+            </div>
+            <div class="box-item pointer-box-2">
+              <span class="box-label">Where I've applied this</span>
+              <div class="box-title">Taiwan Excellence &amp; Tulsi Sarees</div>
+              <div class="box-desc">Developed VoxPop activation and Expo 2025 concepts for Taiwan Excellence. Created the #NavrangWithTulsi festive campaign for Tulsi Sarees.</div>
+            </div>
+          </div>
+          <div class="skill-image-box" onclick="openEmbeddedModal('Taiwan Expo Visual', 'image', 'images/taiwan-expo.png')">
+            <img src="images/taiwan-expo.png" alt="Campaign Activation Preview">
+            <div class="skill-image-caption">🎬 Taiwan Excellence Activation</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILL 3: PHARMA RESEARCH -->
+      <div class="skill-topic-card">
+        <div class="skill-topic-head">
+          <h3><span class="skill-num">03</span> Pharma &amp; Medical Research</h3>
+        </div>
+        <div class="skill-grid-layout">
+          <div class="boxes-trio">
+            <div class="box-item para-box">
+              <span class="box-label">What I do</span>
+              <p>I translate clinical literature, therapeutic data, and complex medical information into clear, engaging healthcare communication. The goal is always to make the science understandable without oversimplifying it.</p>
+            </div>
+            <div class="box-item pointer-box-1">
+              <span class="box-label">Key deliverable</span>
+              <div class="box-title">Research Decks &amp; Communication Insights</div>
+              <div class="box-desc">Competitive analysis, clinical literature simplification, patient journey mapping, and awareness campaign briefs.</div>
+            </div>
+            <div class="box-item pointer-box-2">
+              <span class="box-label">Where I've applied this</span>
+              <div class="box-title">Dr. Reddy's, Alkem &amp; Sanofi</div>
+              <div class="box-desc">Ozempic and diabetes campaign research for Dr. Reddy's. Pan-D counterfeit awareness for Alkem. Omez DSR+ culmination campaign concepts.</div>
+            </div>
+          </div>
+          <div class="skill-image-box" onclick="openEmbeddedModal('Razo Shoot Still 1', 'image', 'images/razo-shoot-1.png')">
+            <img src="images/razo-shoot-1.png" alt="Pharma Research Preview">
+            <div class="skill-image-caption">🔬 Dr. Reddy's Razo Campaign Shoot</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILL 4: SCRIPT WRITING -->
+      <div class="skill-topic-card">
+        <div class="skill-topic-head">
+          <h3><span class="skill-num">04</span> Short-Form Script Writing</h3>
+        </div>
+        <div class="skill-grid-layout">
+          <div class="boxes-trio">
+            <div class="box-item para-box">
+              <span class="box-label">What I do</span>
+              <p>I write video scripts for Instagram Reels, Shorts, and celebrity campaigns. The focus is on hook-driven dialogue that keeps viewers watching while clearly communicating the product or message.</p>
+            </div>
+            <div class="box-item pointer-box-1">
+              <span class="box-label">Key deliverable</span>
+              <div class="box-title">Production-Ready Script Decks</div>
+              <div class="box-desc">Visual cues, dialogue pacing, sound references, and coordination notes for shoot teams.</div>
+            </div>
+            <div class="box-item pointer-box-2">
+              <span class="box-label">Where I've applied this</span>
+              <div class="box-title">Razo x Soha Ali Khan &amp; PlantRich</div>
+              <div class="box-desc">Wrote the Soha Ali Khan pre-buzz script for Razo's "The Gut Feed" and personal finance podcast reels for PlantRich.</div>
+            </div>
+          </div>
+          <div class="skill-image-box" onclick="openEmbeddedModal('PlantRich Shoot Photo 1', 'image', 'images/plantrich-shoot-1.jpeg')">
+            <img src="images/plantrich-shoot-1.jpeg" alt="Script Writing Preview">
+            <div class="skill-image-caption">🎙 PlantRich Podcast Shoot</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILL 5: CONTENT STRATEGY -->
+      <div class="skill-topic-card">
+        <div class="skill-topic-head">
+          <h3><span class="skill-num">05</span> Content Strategy (B2B &amp; LinkedIn)</h3>
+        </div>
+        <div class="skill-grid-layout">
+          <div class="boxes-trio">
+            <div class="box-item para-box">
+              <span class="box-label">What I do</span>
+              <p>I structure multi-channel content roadmaps for tech, B2B, and lifestyle brands. The work involves translating complex product features into clear benefits for founders, executives, and buyers.</p>
+            </div>
+            <div class="box-item pointer-box-1">
+              <span class="box-label">Key deliverable</span>
+              <div class="box-title">Social Grids &amp; Thought Leadership Copy</div>
+              <div class="box-desc">Visual grid layouts, founder post copy, product launch messaging, and audience segment targeting.</div>
+            </div>
+            <div class="box-item pointer-box-2">
+              <span class="box-label">Where I've applied this</span>
+              <div class="box-title">LuftQi &amp; Bharat Hospitality Group</div>
+              <div class="box-desc">Positioned LuftQi across B2B LinkedIn and Instagram. Developed social strategy for luxury hospitality properties.</div>
+            </div>
+          </div>
+          <div class="skill-image-box" onclick="openEmbeddedModal('LuftQi Instagram Grid Visual', 'image', 'images/luftqi-instagram.jpg')">
+            <img src="images/luftqi-instagram.jpg" alt="Content Strategy Preview">
+            <div class="skill-image-caption">🖼 LuftQi Social Strategy Grid</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SKILL 6: COPYWRITING -->
+      <div class="skill-topic-card">
+        <div class="skill-topic-head">
+          <h3><span class="skill-num">06</span> Copywriting &amp; Regional Advertising</h3>
+        </div>
+        <div class="skill-grid-layout">
+          <div class="boxes-trio">
+            <div class="box-item para-box">
+              <span class="box-label">What I do</span>
+              <p>I write ad headlines, carousel copy, and regional market messaging. The work combines emotional hooks with clear value propositions that drive action, whether the audience is national or regional.</p>
+            </div>
+            <div class="box-item pointer-box-1">
+              <span class="box-label">Key deliverable</span>
+              <div class="box-title">Ad Copy, Carousels &amp; Vernacular Taglines</div>
+              <div class="box-desc">Social media ad copy, educational carousels, regional localisation, and call-to-action frameworks.</div>
+            </div>
+            <div class="box-item pointer-box-2">
+              <span class="box-label">Where I've applied this</span>
+              <div class="box-title">PlantRich &amp; Tulsi Sarees</div>
+              <div class="box-desc">Wrote "Your First Salary Is Here" finance carousel for PlantRich and the Odisha regional ad campaign for Tulsi Sarees.</div>
+            </div>
+          </div>
+          <div class="skill-image-box" onclick="openEmbeddedModal('First Salary Cover Slide', 'image', 'images/first-salary.jpg')">
+            <img src="images/first-salary.jpg" alt="Copywriting Preview">
+            <div class="skill-image-caption">🎨 First Salary Carousel Copy</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">06 : Key Achievements &amp; Impact</span>
+      <h2>Highlights so far</h2>
+    </div>
+    <div class="ach-grid">
+      <div class="ach-card">
+        <div>
+          <div class="big">3,700+</div>
+          <div class="ach-subtitle">Followers built from zero for CJ Foundation</div>
+          <p>Organic growth from late March to early August through consistent storytelling and social media communication.</p>
+        </div>
+      </div>
+      <div class="ach-card">
+        <div>
+          <div class="big">7 Clients</div>
+          <div class="ach-subtitle">Across multiple industries</div>
+          <p>Experience spanning finance, healthcare, social impact, fashion, travel, and interior design.</p>
+        </div>
+      </div>
+      <div class="ach-card">
+        <div>
+          <div class="big">2 Years</div>
+          <div class="ach-subtitle">Working across content and communication</div>
+          <p>Building experience in research-led writing, content strategy, campaigns, and brand storytelling.</p>
+        </div>
+      </div>
+      <div class="ach-card">
+        <div>
+          <div class="big">National Brands</div>
+          <div class="ach-subtitle">Healthcare, pharma, and experiential campaigns</div>
+          <p>Worked on communication and research projects for brands including Sanofi, Dr. Reddy's, Alkem, and Taiwan Excellence.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section id="testimonial" class="alt">
+  <div class="wrap testimonial-wrap">
+    <span class="eyebrow">✦ Client &amp; Team Feedback</span>
+    <div class="quote-mark">"</div>
+    <blockquote>"Nitya has an uncanny ability to take dense, technical or medical briefs and distill them into clear, compelling narratives that resonate effortlessly with our audience."</blockquote>
+    <div class="testimonial-who">Client &amp; Agency Partners</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<footer id="contact">
+  <div class="wrap contact-inner">
+    <div>
+      <span class="eyebrow" style="background:var(--sceptre-red);color:#fff;border-color:var(--sceptre-red);">07 : Contact</span>
+      <h2>Let's build your next campaign.</h2>
+      <p style="margin-top:16px;max-width:44ch;">Whether it's a content strategy, a script, or a full campaign concept, I'd love to hear what you're working on.</p>
+    </div>
+    <ul class="contact-list">
+      <li><span>Email</span><a href="mailto:nityawanagework@gmail.com">nityawanagework@gmail.com</a></li>
+      <li><span>Phone</span><a href="tel:+918779472042">+91 87794 72042</a></li>
+      <li><span>Location</span><a href="#">Mumbai, India</a></li>
+    </ul>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>Nitya Wanage . Content Strategist &amp; Brand Storyteller</span>
+    <span>Mumbai, India</span>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="mediaModal" onclick="closeEmbeddedModal(event)">
+  <div class="modal-window" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle">Asset Preview</div>
+      <button class="modal-close" onclick="closeEmbeddedModal()" aria-label="Close modal">✕</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<!-- EDIT BAR -->
+<div class="edit-bar" id="editBar" style="display:none;">
+  <span>✏️ Edit Mode Active</span>
+  <button onclick="savePageEdits()">💾 Save Edits</button>
+  <button class="secondary" onclick="toggleEditMode()">Done Editing</button>
+</div>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  function scrollToCat(catId) {
+    const pills = document.querySelectorAll('.cat-pill');
+    pills.forEach(p => p.classList.remove('active'));
+    event.target.classList.add('active');
+    if (catId === 'cat-all') {
+      document.getElementById('work-archive').scrollIntoView({ behavior: 'smooth' });
+    } else {
+      const el = document.getElementById(catId);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function openEmbeddedModal(title, type, url) {
+    const modal = document.getElementById('mediaModal');
+    const mTitle = document.getElementById('modalTitle');
+    const mBody = document.getElementById('modalBody');
+    mTitle.textContent = title;
+    if (type === 'image') {
+      mBody.innerHTML = `<img src="${url}" alt="${title}">`;
+    } else {
+      mBody.innerHTML = `<iframe src="${url}" allow="autoplay" frameborder="0"></iframe>`;
+    }
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeEmbeddedModal(e) {
+    const modal = document.getElementById('mediaModal');
+    const mBody = document.getElementById('modalBody');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => { mBody.innerHTML = ''; }, 300);
+  }
+
+  let isEditing = false;
+  function toggleEditMode() {
+    isEditing = !isEditing;
+    const btn = document.getElementById('editToggleBtn');
+    const bar = document.getElementById('editBar');
+    const editableElements = document.querySelectorAll('h1, h2, h3, h4, p, li, .eyebrow, .pill, .stat span, .box-title, .box-desc, .skill-image-caption, .my-role, .sub-desc, .ach-subtitle');
+    editableElements.forEach(el => { el.contentEditable = isEditing ? "true" : "false"; });
+    if (isEditing) {
+      btn.classList.add('active');
+      btn.textContent = "✓ Done Editing";
+      bar.style.display = "flex";
+    } else {
+      btn.classList.remove('active');
+      btn.textContent = "✏️ Edit Text";
+      bar.style.display = "none";
+    }
+  }
+
+  function savePageEdits() {
+    localStorage.setItem('nitya_portfolio_saved_html', document.body.innerHTML);
+    alert('🎉 Your text edits have been saved to your browser!');
+  }
+</script>
+
+</body>
+</html>
