@@ -27,10 +27,24 @@
     margin:0;
     font-family:'Inter',sans-serif;
     color:var(--ink);
-    background:var(--paper);
+    background:
+      radial-gradient(circle at 8% 12%, rgba(35,129,166,.08), transparent 26rem),
+      radial-gradient(circle at 92% 42%, rgba(140,30,36,.055), transparent 30rem),
+      repeating-linear-gradient(0deg, rgba(35,24,21,.018) 0, rgba(35,24,21,.018) 1px, transparent 1px, transparent 5px),
+      var(--paper);
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
+    position:relative;
   }
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.2;background-image:radial-gradient(circle at 20% 20%,rgba(35,129,166,.14) 0 1px,transparent 1.5px),radial-gradient(circle at 80% 70%,rgba(140,30,36,.1) 0 1px,transparent 1.5px);background-size:34px 34px,46px 46px;mix-blend-mode:multiply;}
+  body > *{position:relative;z-index:1;}
+  strong{font-weight:800;color:var(--sceptre-red);}
+  .chapter-divider{padding:24px 0 30px;background:linear-gradient(90deg,transparent,rgba(35,129,166,.08) 18%,rgba(140,30,36,.08) 82%,transparent);}
+  .chapter-divider-inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:18px;}
+  .chapter-divider-line{height:1px;background:linear-gradient(90deg,transparent,var(--cerulean-blue));}
+  .chapter-divider-line:last-child{background:linear-gradient(90deg,var(--sceptre-red),transparent);}
+  .chapter-divider-label{display:flex;align-items:center;gap:12px;padding:10px 18px;border:1px solid var(--line);border-radius:999px;background:rgba(250,247,239,.86);box-shadow:0 8px 24px -16px rgba(35,24,21,.3);font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--potting-soil);}
+  .chapter-divider-label::before{content:"05";color:var(--cerulean-blue);font-weight:800;}
   h1,h2,h3,h4{
     font-family:'Fraunces',serif;
     font-weight:700;
@@ -298,12 +312,10 @@
   .box-item.pointer-box-2 .box-label{color:var(--potting-soil);}
   .box-title{font-weight:700;font-size:0.95rem;color:var(--java-brown);margin-bottom:4px;}
   .box-desc{font-size:0.88rem;color:var(--potting-soil);}
-  .skill-image-box{
-    aspect-ratio:16/11;border-radius:20px;overflow:hidden;
-    background:var(--potting-soil);position:relative;border:1px solid var(--line);
-    box-shadow:0 10px 25px -10px rgba(35,24,21,0.25);
-  }
-  .skill-image-box img{width:100%;height:100%;object-fit:cover;}
+  .skill-image-box{aspect-ratio:16/11;border-radius:20px;overflow:hidden;background:radial-gradient(circle at 30% 20%,rgba(35,129,166,.16),transparent 40%),var(--potting-soil);position:relative;border:1px solid var(--line);box-shadow:0 10px 25px -10px rgba(35,24,21,0.25);display:flex;align-items:center;justify-content:center;cursor:zoom-in;}
+  .skill-image-box img{width:100%;height:100%;object-fit:contain;padding:14px;transition:transform .28s ease;box-sizing:border-box;}
+  .skill-image-box.vertical img{width:auto;max-width:72%;height:calc(100% - 24px);padding:0;box-shadow:0 14px 30px rgba(0,0,0,.22);border-radius:8px;}
+  .skill-image-box:hover img{transform:scale(1.015);}
   .skill-image-caption{
     position:absolute;bottom:0;inset-inline:0;background:rgba(35,24,21,0.85);
     color:var(--transparent-yellow);font-family:'JetBrains Mono',monospace;font-size:0.72rem;
@@ -323,6 +335,8 @@
   }
   .gallery-card:hover{transform:translateY(-4px);box-shadow:0 16px 30px -14px rgba(35,24,21,0.34);}
   .gallery-card img{width:100%;height:100%;object-fit:contain;padding:10px;transition:transform .28s ease;}
+  .gallery-card.vertical{background:radial-gradient(circle at 30% 20%,rgba(35,129,166,.10),transparent 45%),#e7dfd3;}
+  .gallery-card.vertical img{width:auto;max-width:72%;height:calc(100% - 20px);margin:0 auto;padding:0;box-shadow:0 10px 24px rgba(35,24,21,.18);border-radius:7px;}
   .gallery-card:hover img{transform:scale(1.018);}
   .gallery-card::after{
     content:'↗';position:absolute;right:12px;top:12px;width:34px;height:34px;
@@ -341,6 +355,8 @@
     background:#efe8dc;border:1px solid var(--line);box-shadow:0 12px 28px -14px rgba(35,24,21,.28);
   }
   .carousel-stage img{width:100%;height:100%;object-fit:contain;padding:12px;cursor:zoom-in;transition:transform .25s ease;}
+  .carousel-stage.vertical{background:radial-gradient(circle at 30% 20%,rgba(35,129,166,.10),transparent 45%),#e7dfd3;}
+  .carousel-stage.vertical img{width:auto;max-width:72%;height:calc(100% - 24px);padding:0;margin:0 auto;border-radius:7px;box-shadow:0 10px 24px rgba(35,24,21,.18);}
   .carousel-stage:hover img{transform:scale(1.015);}
   .carousel-btn{
     position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:42px;height:42px;
@@ -456,6 +472,10 @@
     .nav-toggle{display:block;}
   }
   @media (max-width:600px){
+    .chapter-divider{padding:14px 0 18px;}
+    .chapter-divider-inner{grid-template-columns:1fr;}
+    .chapter-divider-line{display:none;}
+    .chapter-divider-label{justify-content:center;}
     .image-gallery{grid-template-columns:1fr;}
     .gallery-card{aspect-ratio:4/3;}
     .carousel-stage{aspect-ratio:4/3;}
@@ -633,8 +653,8 @@
         </div>
         <div class="work-grid-2">
           <div>
-            <p class="sub-desc">CJ Foundation approached us in late March with a new digital presence and the need to establish a clear identity online.</p>
-            <p class="sub-desc">I helped shape the brand's content direction, storytelling, tone of voice, and community-focused communication. By early August, the page had grown from zero to 3,700+ followers organically, with the content building a growing and engaged community around the foundation's work.</p>
+            <p class="sub-desc"><strong>CJ Foundation</strong> approached us in late March with a new digital presence and the need to establish a clear identity online.</p>
+            <p class="sub-desc">I helped shape the brand's <strong>content direction, storytelling, tone of voice, and community-focused communication</strong>. By early August, the page had grown from zero to <strong>3,700+ followers organically</strong>, with the content building a growing and engaged community around the foundation's work.</p>
             <div class="my-role">My role: Brand Storytelling · Content Strategy · Social Media Communication</div>
             <div class="media-actions">
               <button class="view-btn primary" onclick="openLightbox('CJ Foundation Brand Storytelling', ['images/cj-foundation-1-1.jpg','images/cj-foundation-1-2.jpg'], 0)">🖼 View Case Study Slide 1.1</button>
@@ -661,21 +681,17 @@
         </div>
         <div class="work-grid-2">
           <div>
-            <p class="sub-desc">For Tulsi Sarees, I explored the stories behind India's weaving traditions and brought them into the brand's digital communication.</p>
-            <p class="sub-desc">The content connected heritage, craftsmanship, festive culture, and contemporary fashion, helping position traditional sarees within a relatable narrative.</p>
-            <div class="my-role">My role: Brand Storytelling · Social Media Copy · Campaign Communication</div>
+            <p class="sub-desc">For <strong>Tulsi Sarees</strong>, a large saree manufacturing brand with its factory in Mumbai and a strong retail network across Odisha, I worked on taking the brand closer to the <strong>shopkeepers and local buyers</strong> who ultimately drive its market presence.</p>
+            <p class="sub-desc">The communication was deliberately regional: <strong>heritage, silk, craftsmanship and storytelling</strong> were translated into language and cultural cues that felt familiar to Odisha's audience, while making Tulsi feel like a brand with scale, legacy and a clear place in the market.</p>
+            <div class="my-role">My role: <strong>Brand Storytelling</strong> · Social Media Copy · Regional Communication · Campaign Communication</div>
             <div class="media-actions">
               <button class="view-btn primary" onclick="openEmbeddedModal('Tulsi Sarees Strategic Content Execution', 'doc', 'https://drive.google.com/file/d/1wnNDvg50jg0BPj6nyarYxjblDap3mQyT/preview')">📄 Preview Strategy Document</button>
             </div>
           </div>
-          <div class="image-gallery" aria-label="Tulsi Sarees brand storytelling images">
-            <div class="gallery-card" onclick="openLightbox('Tulsi Sarees Brand Storytelling', ['images/tulsi-sarees.jpg','images/tulsi-navratri.jpg'], 0)">
-              <img src="images/tulsi-sarees.jpg" alt="Tulsi Sarees heritage storytelling visual">
-              <span class="gallery-label">Image 1 · Click to enlarge</span>
-            </div>
-            <div class="gallery-card" onclick="openLightbox('Tulsi Sarees Brand Storytelling', ['images/tulsi-sarees.jpg','images/tulsi-navratri.jpg'], 1)">
-              <img src="images/tulsi-navratri.jpg" alt="Tulsi Sarees festive storytelling visual">
-              <span class="gallery-label">Image 2 · Click to enlarge</span>
+          <div class="image-gallery" aria-label="Tulsi Sarees brand storytelling image">
+            <div class="gallery-card" onclick="openLightbox('Tulsi Sarees · Heritage Silk Craftsmanship & Storytelling', ['images/tulsi-sarees.jpg'], 0)">
+              <img src="images/tulsi-sarees.jpg" alt="Tulsi Sarees heritage silk craftsmanship storytelling visual">
+              <span class="gallery-label">Heritage storytelling · Click to enlarge</span>
             </div>
           </div>
         </div>
@@ -718,7 +734,7 @@
         </div>
         <div class="work-grid-2">
           <div>
-            <p class="sub-desc">I developed the #NavrangWithTulsi campaign around the nine colours of Navratri, using daily saree edits, styling content, and festive hooks to create a consistent narrative throughout the celebration.</p>
+            <p class="sub-desc">I developed the <strong>#NavrangWithTulsi</strong> campaign around the nine colours of Navratri, using daily saree edits, styling content, and festive hooks to create a consistent narrative throughout the celebration.</p>
             <div class="my-role">My role: Campaign Ideation · Copywriting · Social Media Strategy</div>
             <div class="media-actions">
               <button class="view-btn primary" onclick="openEmbeddedModal('#NavrangWithTulsi Campaign Doc', 'doc', 'https://drive.google.com/file/d/1u6B_2Z4PY39h8-phzEXz9PeO0aoFsh2H/preview')">📄 Read Navratri Campaign Plan</button>
@@ -767,7 +783,7 @@
         </div>
         <div class="work-grid-2">
           <div>
-            <p class="sub-desc">I developed a content strategy for LuftQi, an award-winning air purification innovation, designed to communicate the problem of air pollution while introducing the technology as a relevant solution.</p>
+            <p class="sub-desc">I developed a <strong>content strategy for LuftQi</strong>, an award-winning air purification innovation, designed to communicate the problem of air pollution while introducing the technology as a relevant solution.</p>
             <p class="sub-desc">The strategy was adapted across LinkedIn and Instagram, with messaging designed for business decision-makers and wellness-conscious consumers.</p>
             <div class="my-role">My role: Content Strategy · Audience Research · Social Media Direction</div>
             <div class="media-actions">
@@ -823,8 +839,8 @@
         </div>
         <div class="work-grid-2">
           <div>
-            <p class="sub-desc">I wrote an educational carousel aimed at young professionals navigating their first salary. The challenge was to make financial planning feel approachable rather than overwhelming.</p>
-            <p class="sub-desc">The copy broke down budgeting, emergency funds, and income allocation into simple, relatable ideas without relying on financial jargon.</p>
+            <p class="sub-desc">I wrote an <strong>educational carousel for young professionals</strong> navigating their first salary. The challenge was to make financial planning feel approachable rather than overwhelming.</p>
+            <p class="sub-desc">The copy broke down <strong>budgeting, emergency funds, and income allocation</strong> into simple, relatable ideas without relying on financial jargon.</p>
             <div class="my-role">My role: Research · Copywriting · Educational Content</div>
             <div class="media-actions">
               <button class="view-btn primary" onclick="openLightbox('First Salary Cover Slide', ['images/first-salary.jpg'], 0)">🖼 Preview First Salary Carousel Slide</button>
@@ -853,8 +869,8 @@
         </div>
         <div class="work-grid-2">
           <div>
-            <p class="sub-desc">For Tulsi Sarees' Odisha market communication, I developed regional advertising copy that brought local language and cultural familiarity into the brand's messaging.</p>
-            <p class="sub-desc">The focus was on making the communication feel natural to the audience while retaining the brand's identity.</p>
+            <p class="sub-desc">For Tulsi Sarees' <strong>Odisha market communication</strong>, I developed regional advertising copy that brought local language and cultural familiarity into the brand's messaging.</p>
+            <p class="sub-desc">The focus was on making the communication feel <strong>natural to the audience while retaining the brand's identity</strong>.</p>
             <div class="my-role">My role: Copywriting · Regional Communication · Cultural Adaptation</div>
             <div class="media-actions">
               <button class="view-btn primary" onclick="openLightbox('Tulsi Saree Odia Campaign Slide', ['images/tulsi-odia.jpeg'], 0)">🖼 View Regional Ad Copy Slide</button>
@@ -980,7 +996,7 @@
 
       <div class="sub-division">
         <div class="sub-head">
-          <h4>"Windfall of Money" Podcast-Style Reel Script</h4>
+          <h4>PlantRich Podcast-Style Reel Script</h4>
           <span class="sub-client">PlantRich · Financial Literacy Reel</span>
         </div>
         <div class="work-grid-2">
@@ -990,8 +1006,10 @@
             <div class="my-role">My role: Scriptwriting · Financial Research · Short-Form Content</div>
             <div class="media-actions">
               <button class="view-btn primary" onclick="openEmbeddedModal('PlantRich Podcast Script', 'doc', 'https://drive.google.com/file/d/1svFLTGXjuRGYqLHhNU6WIGZV2hA9BB4e/preview')">📄 Read Podcast Reel Script</button>
-              <button class="view-btn" onclick="openLightbox('Windfall of Money · PlantRich Shoot', ['images/plantrich-shoot-1.jpeg','images/plantrich-shoot-2.jpeg'], 0)">📸 View Thumbnail 1</button>
-              <button class="view-btn" onclick="openLightbox('Windfall of Money · PlantRich Shoot', ['images/plantrich-shoot-1.jpeg','images/plantrich-shoot-2.jpeg'], 1)">📸 View Thumbnail 2</button>
+              <button class="view-btn" onclick="openLightbox('PlantRich Podcast-Style Reel Script', ['images/plantrich-shoot-1.jpeg','images/plantrich-shoot-2.jpeg'], 0)">📸 View Thumbnail 1</button>
+              <button class="view-btn" onclick="openLightbox('PlantRich Podcast-Style Reel Script', ['images/plantrich-shoot-1.jpeg','images/plantrich-shoot-2.jpeg'], 1)">📸 View Thumbnail 2</button>
+              <a class="view-btn" href="https://www.instagram.com/reel/DXegNyxCEu3/?igsi=MWtzZXg1MmNkZGZndw==" target="_blank" rel="noopener noreferrer">▶ Watch Reel 1</a>
+              <a class="view-btn" href="https://www.instagram.com/reel/DVJCjDjCNbL/?igsi=MW5wbGY1cHBraXJwZQ==" target="_blank" rel="noopener noreferrer">▶ Watch Reel 2</a>
             </div>
           </div>
           <div class="image-gallery" aria-label="PlantRich podcast shoot stills">
@@ -1010,6 +1028,15 @@
 
   </div>
 </section>
+
+<!-- CHAPTER DIVIDER -->
+<div class="chapter-divider" aria-label="Transition from work archive to core capabilities">
+  <div class="wrap chapter-divider-inner">
+    <span class="chapter-divider-line"></span>
+    <span class="chapter-divider-label">From the work to the thinking behind it</span>
+    <span class="chapter-divider-line"></span>
+  </div>
+</div>
 
 <!-- SKILLS WITH 3 TEXT BOXES PER TOPIC & PICTURES -->
 <section id="skills" class="alt">
@@ -1102,7 +1129,7 @@
               <div class="box-desc">Ozempic and diabetes campaign research for Dr. Reddy's. Pan-D counterfeit awareness for Alkem. Omez DSR+ culmination campaign concepts.</div>
             </div>
           </div>
-          <div class="skill-image-box" onclick="openLightbox('Razo The Gut Feed Shoot', ['images/razo-shoot-1.png','images/razo-shoot-2.png'], 0)") role="button" tabindex="0">
+          <div class="skill-image-box" onclick="openLightbox('Razo The Gut Feed Shoot', ['images/razo-shoot-1.png','images/razo-shoot-2.png'], 0)" role="button" tabindex="0">
             <img src="images/razo-shoot-1.png" alt="Pharma Research Preview">
             <div class="skill-image-caption">🔬 Dr. Reddy's Razo Campaign Shoot</div>
           </div>
@@ -1131,9 +1158,9 @@
               <div class="box-desc">Wrote the Soha Ali Khan pre-buzz script for Razo's "The Gut Feed" and personal finance podcast reels for PlantRich.</div>
             </div>
           </div>
-          <div class="skill-image-box" onclick="openLightbox('Windfall of Money · PlantRich Shoot', ['images/plantrich-shoot-1.jpeg','images/plantrich-shoot-2.jpeg'], 0)") role="button" tabindex="0">
-            <img src="images/plantrich-shoot-1.jpeg" alt="Script Writing Preview">
-            <div class="skill-image-caption">🎙 PlantRich Podcast Shoot</div>
+          <div class="skill-image-box" onclick="openLightbox('PlantRich Podcast-Style Reel Script', ['images/plantrich-shoot-2.jpeg'], 0)" role="button" tabindex="0">
+            <img src="images/plantrich-shoot-2.jpeg" alt="PlantRich Windfall of Money podcast-style reel cover">
+            <div class="skill-image-caption">🎙 PlantRich Podcast-Style Reel Script</div>
           </div>
         </div>
       </div>
@@ -1160,7 +1187,7 @@
               <div class="box-desc">Positioned LuftQi across B2B LinkedIn and Instagram. Developed social strategy for luxury hospitality properties.</div>
             </div>
           </div>
-          <div class="skill-image-box" onclick="openLightbox('LuftQi Social Strategy', ['images/luftqi-instagram.jpg','images/luftqi-linkedin.jpg'], 0)") role="button" tabindex="0">
+          <div class="skill-image-box" onclick="openLightbox('LuftQi Social Strategy', ['images/luftqi-instagram.jpg','images/luftqi-linkedin.jpg'], 0)" role="button" tabindex="0">
             <img src="images/luftqi-instagram.jpg" alt="Content Strategy Preview">
             <div class="skill-image-caption">🖼 LuftQi Social Strategy Grid</div>
           </div>
@@ -1246,7 +1273,7 @@
     <span class="eyebrow">✦ Client &amp; Team Feedback</span>
     <div class="quote-mark">"</div>
     <blockquote>"Nitya has an uncanny ability to take dense, technical or medical briefs and distill them into clear, compelling narratives that resonate effortlessly with our audience."</blockquote>
-    <div class="testimonial-who">Client &amp; Agency Partners</div>
+    <div class="testimonial-who">Clients &amp; Agency Partners</div>
   </div>
 </section>
 
@@ -1434,8 +1461,23 @@
     if (!images.length) return;
     image.src = images[index];
     image.alt = `${image.alt.split(' · ')[0]} · Image ${index + 1}`;
+    const stage = carousel.querySelector('.carousel-stage');
+    const markStage = () => stage && stage.classList.toggle('vertical', image.naturalHeight > image.naturalWidth * 1.15);
+    if (image.complete && image.naturalWidth) markStage();
+    else image.addEventListener('load', markStage, {once:true});
     counter.textContent = `${index + 1} / ${images.length}`;
     carousel.querySelectorAll('.carousel-dot').forEach((dot, i) => dot.classList.toggle('active', i === index));
+  }
+
+  function classifyVerticalMedia(){
+    document.querySelectorAll('.gallery-card img, .carousel-stage img, .skill-image-box img').forEach(img => {
+      const apply = () => {
+        const parent = img.closest('.gallery-card, .carousel-stage, .skill-image-box');
+        if (parent) parent.classList.toggle('vertical', img.naturalHeight > img.naturalWidth * 1.15);
+      };
+      if (img.complete && img.naturalWidth) apply();
+      else img.addEventListener('load', apply, {once:true});
+    });
   }
 
   function moveCarousel(button, direction) {
@@ -1464,6 +1506,7 @@
   }
 
   initCarousels();
+  classifyVerticalMedia();
 </script>
 
 </body>
